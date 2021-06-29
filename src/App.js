@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
+import LayoutExplorer from './LayoutExplorer.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+
+var sectionStyle = {
+ width: "100%",
+  height: "100%",
+ 
+};
+
+var headerStyle = {
+ width: "100%",
+  height: "33%",
+
+};
+
+
+
+class App extends React.Component {
+  render() {
+
+
+    return   <LayoutExplorer></LayoutExplorer>
+	
+   
+  
 }
-
+}
 export default App;

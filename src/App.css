@@ -1,11 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Itim&family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 .App {
-  text-align: center;
+  text-align: left;
+ font-family: 'Reenie Beanie', cursive;
+  font-weight: bold;
+
+
+}
+li {
+  text-align: left;
+ font-size: 28px;
+ font-family: 'Reenie Beanie';
+  font-weight: bold;
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.work-experience-item {
+	 text-align: left;
+ font-size: 28px;
+ font-family: 'Reenie Beanie';
+  font-weight: bold;
 }
+
+.work-experience-header {
+ text-align: left;
+ font-size: 36px;
+ font-family: 'Reenie Beanie';
+  font-weight: bold;
+}
+
+.big-header {
+ text-align: left;
+ font-size: 42px;
+ font-family: 'Reenie Beanie';
+  font-weight: bold;
+}
+
+
+
+h1 {
+margin: auto
+}
+
+.canvas {
+
+height:20%;
+}
+
+.hidden {
+display:none;
+}
+/*
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+ 
+}
+*/
+
+.sticky {
+  float: left;
+  width: 200px;
+  padding: 12px;
+
+}
+
+.column-fillremainder {
+  float: left;
+  width: 100%;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+/*
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+*/
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,7 +96,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,6 +105,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+canvas.dotted {border-style: dotted}
 
 .App-link {
   color: #61dafb;
