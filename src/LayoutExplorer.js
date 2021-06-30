@@ -18,7 +18,7 @@ useEffect(() => {
          
      
 
- return (<div>kevin</div>);
+ return (<div>{layouts[0].tagType}</div>);
 
 }
 
