@@ -23,11 +23,11 @@ useEffect(() => {
 //);
 
  return (
-    <div>
+    <table>
       {layouts.map((user) => (
-        <div >{user.tagType}</div>
+       <tr> <td >{user.tagType}</td><td>{user.priceType}</td></tr>
       ))}
-    </div>
+    </table>
   );
 
 }
