@@ -24,8 +24,9 @@ useEffect(() => {
 
  return (
     <table>
-      {layouts.map((user) => (
-       <tr> <td >{user.tagType}</td><td>{user.priceType}</td></tr>
+      <tr><th>Tag Type</th><th>Price Type</th></tr>
+      {layouts.map((layout) => (
+       <tr> <td >{layout.tagType}</td><td>{layout.priceType}</td></tr>
       ))}
     </table>
   );
