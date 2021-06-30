@@ -18,7 +18,9 @@ useEffect(() => {
          
      
 
- return (<div>{layouts[0].tagType}</div>);
+ return (<div>
+  
+   <table><tr><td>{layouts[0].tagType}</td><td>{layouts[0].priceType}</td></tr></table></div>);
 
 }
 
