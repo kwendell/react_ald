@@ -18,10 +18,20 @@ useEffect(() => {
          
      
 
- return (<div>
-  
-   <table><tr><td>{layouts[0].tagType}</td><td>{layouts[0].priceType}</td></tr></table></div>);
+// return (<div>  
+ //  <table><tr><td>{layouts[0].tagType}</td><td>{layouts[0].priceType}</td></tr></table></div>
+//);
+
+ return (
+    <div>
+      {layouts.map((user) => (
+        <div >{user.tagType}</div>
+      ))}
+    </div>
+  );
 
 }
+
+
 
 export default LayoutExplorer;
