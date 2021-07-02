@@ -23,8 +23,8 @@ useEffect(() => {
 //);
 
  return (
-    <table>
-      <tr><th>Tag Type</th><th>Price Type</th></tr>
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+      <tr><th class="th-sm">Tag Type</th><th class="th-sm">Price Type</th></tr>
       {layouts.map((layout) => (
        <tr> <td >{layout.tagType}</td><td>{layout.priceType}</td></tr>
       ))}
