@@ -1,11 +1,15 @@
 
 import React from 'react';
 import { useEffect,useState } from 'react';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
+
 
 
 const LayoutExplorer  = () => {
 
 const [layouts, setLayouts] = useState([]);
+const [entry,setEntry] = useState(2);
 
 useEffect(() => {
   fetch('http://localhost:8000/layouts')
@@ -23,12 +27,21 @@ useEffect(() => {
 //);
 
  return (
-    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-      <tr><th class="th-sm">Tag Type</th><th class="th-sm">Price Type</th></tr>
+    <table id="LayoutTable" className="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+   
+  <thead>
+    <tr>
+      <th scope="col">Tag Type</th>
+      <th scope="col">Price Type</th>
+    
+    </tr>
+  </thead>
+  <tbody>
       {layouts.map((layout) => (
-       <tr> <td >{layout.tagType}</td><td>{layout.priceType}</td></tr>
+       <tr>   <td class="th-sm" >{layout.tagType}</td><td class="th-sm">{layout.priceType}</td></tr>
       ))}
-    </table>
+  </tbody>
+  </table>
   );
 
 }
