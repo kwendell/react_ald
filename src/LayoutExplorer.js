@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useEffect,useState } from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
 
 
 
@@ -9,7 +9,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 const LayoutExplorer  = () => {
 
 const [layouts, setLayouts] = useState([]);
-const [entry,setEntry] = useState(2);
+
 
 useEffect(() => {
   fetch('http://localhost:8000/layouts')
@@ -27,10 +27,10 @@ useEffect(() => {
 //);
 
  return (
-    <table id="LayoutTable" className="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <table id="LayoutTable" className="table table-striped table-bordered table-sm"  width="100%">
    
   <thead>
-    <tr>
+    <tr key="header">
       <th scope="col">Tag Type</th>
       <th scope="col">Price Type</th>
     
@@ -38,7 +38,7 @@ useEffect(() => {
   </thead>
   <tbody>
       {layouts.map((layout) => (
-       <tr>   <td class="th-sm" >{layout.tagType}</td><td class="th-sm">{layout.priceType}</td></tr>
+       <tr key={layout.layout_id}><td className="th-sm" > {layout.tagType}</td><td className="th-sm" >{layout.priceType}</td></tr>
       ))}
   </tbody>
   </table>
