@@ -24,18 +24,20 @@ useEffect(() => {
 
  return (
         
-    <Table>
+    <Table striped>
   
   <thead>
     <tr key="header">
-      <th>Price Type</th>
       <th>Tag Type</th>
+      <th>Last Updated</th>
+      <th>Pricing</th>
+      
     
     </tr>
   </thead>
   <tbody>
       {layouts.map((layout) => (
-       <tr key={layout.layout_id}><td className="td-lg" > {layout.wdt_type_id}</td><td className="td-lg" >{layout.update_date}</td></tr>
+       <tr key={layout.layout_id}><td className="td-lg" > {layout.wdt_tag_type_str}</td><td className="td-lg" >{layout.update_date}</td><td className="td-lg" >{layout.pricing_scenario}</td></tr>
       ))}
   </tbody>
   </Table>
