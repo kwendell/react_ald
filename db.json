@@ -1,12 +1,12 @@
 {
-    "layouts": [{"pricing_scenario":"REG","wdt_type_id":31,"update_date":"Feb 11, 2021 2:39:45 PM","version":5,"layout_id":906727293135640648},
-                {"pricing_scenario":"DEFAULT","wdt_type_id":19,"update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":555736149575900906},
-                {"pricing_scenario":"DEFAULT","wdt_type_id":32,"update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":643483952137412330},
-                {"pricing_scenario":"DEFAULT","wdt_type_id":22,"update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":877478092301442794}, 
-                {"pricing_scenario":"DEFAULT","wdt_type_id":26,"update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":760481022219427562},
-                {"pricing_scenario":"DEFAULT","wdt_type_id":31,"update_date":"May 25, 2021 7:55:34 AM","version":2,"layout_id":906727359821946602},
-                {"pricing_scenario":"JAGEV","wdt_type_id":2,"update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498536088384836},
-                {"pricing_scenario":"N","wdt_type_id":2,"update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498535041007640} ] 
+    "layouts": [{"pricing_scenario":"REG","wdt_type_id":31,"wdt_tag_type_str":"eTag210Color","update_date":"Feb 11, 2021 2:39:45 PM","version":5,"layout_id":906727293135640648},
+                {"pricing_scenario":"DEFAULT","wdt_type_id":19,"wdt_tag_type_str":"eTag210","update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":555736149575900906},
+                {"pricing_scenario":"DEFAULT","wdt_type":32,"wdt_tag_type_str":"eTag420Color","update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":643483952137412330},
+                {"pricing_scenario":"DEFAULT","wdt_type_id":22,"wdt_tag_type_str":"eTag420","update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":877478092301442794}, 
+                {"pricing_scenario":"DEFAULT","wdt_type_id":26,"wdt_tag_type_str":"eTag580","update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":760481022219427562},
+                {"pricing_scenario":"DEFAULT","wdt_type_id":31,"wdt_tag_type_str":"eTag210Color","update_date":"May 25, 2021 7:55:34 AM","version":2,"layout_id":906727359821946602},
+                {"pricing_scenario":"JAGEV","wdt_type_id":2,"wdt_tag_type_str":"eTag400","update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498536088384836},
+                {"pricing_scenario":"N","wdt_type_id":2,"wdt_tag_type_str":"eTag400","update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498535041007640} ] 
      
 }
 
