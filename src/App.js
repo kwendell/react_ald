@@ -2,8 +2,9 @@ import React from 'react';
 
 import './App.css';
 import LayoutExplorer from './LayoutExplorer.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import 'bootstrap-table/dist/bootstrap-table.css';
+
 
 
 
