@@ -27,18 +27,18 @@ useEffect(() => {
 //);
 
  return (
-    <table id="LayoutTable" className="table table-striped table-bordered table-sm"  width="100%">
+    <table id="LayoutTable" className="table table-striped table-bordered table-lg"  width="100%">
    
   <thead>
     <tr key="header">
-      <th scope="col">Tag Type</th>
-      <th scope="col">Price Type</th>
+      <th>Price Type</th>
+      <th>Tag Type</th>
     
     </tr>
   </thead>
   <tbody>
       {layouts.map((layout) => (
-       <tr key={layout.layout_id}><td className="th-sm" > {layout.tagType}</td><td className="th-sm" >{layout.priceType}</td></tr>
+       <tr key={layout.layout_id}><td className="td-lg" > {layout.wdt_type_id}</td><td className="td-lg" >{layout.update_date}</td></tr>
       ))}
   </tbody>
   </table>
