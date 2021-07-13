@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useEffect,useState } from 'react';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 
 
@@ -27,7 +28,7 @@ useEffect(() => {
 //);
 
  return (
-    <table id="LayoutTable" className="table table-striped table-bordered table-lg"  width="100%">
+    <table id="LayoutTable" className="table table-bordered"  width="100%">
    
   <thead>
     <tr key="header">
