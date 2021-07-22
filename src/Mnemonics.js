@@ -9,6 +9,15 @@ const  Mnemonics  = () => {
 
     const [mnemonics, setMnemonics] = useState([]);
 
+    const liStyle = {
+	    fontSize: 14,
+		fontFamily: "monospace",
+		color: "#0080A8",
+		
+		backgroundColor: "#FFFFFF",
+		
+	   };
+
 
     useEffect(() => {
         fetch('http://localhost:8000/mnemonics')
@@ -23,7 +32,7 @@ const  Mnemonics  = () => {
       
 
     return (<ul>{mnemonics.map((mnemonic) => (
-        <li key={mnemonic}>{mnemonic}</li>
+        <li style={liStyle} key={mnemonic}>{mnemonic}</li>
        ))}</ul>);
 
 }
