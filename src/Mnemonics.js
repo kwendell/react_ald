@@ -14,7 +14,9 @@ const  Mnemonics  = () => {
         fetch('http://localhost:8000/mnemonics')
             .then(response => response.json()) 
             .then(data => {
-                 
+                data.sort(function (a, b) {
+                    return a.toLowerCase().localeCompare(b.toLowerCase());
+                });
                   setMnemonics(data)}
             );
       });
