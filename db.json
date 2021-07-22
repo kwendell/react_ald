@@ -6,7 +6,8 @@
                 {"pricing_scenario":"DEFAULT","wdt_type_id":26,"wdt_tag_type_str":"eTag580","update_date":"Feb 12, 2021 8:14:02 AM","version":1,"layout_id":760481022219427562},
                 {"pricing_scenario":"DEFAULT","wdt_type_id":31,"wdt_tag_type_str":"eTag210Color","update_date":"May 25, 2021 7:55:34 AM","version":2,"layout_id":906727359821946602},
                 {"pricing_scenario":"JAGEV","wdt_type_id":2,"wdt_tag_type_str":"eTag400","update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498536088384836},
-                {"pricing_scenario":"N","wdt_type_id":2,"wdt_tag_type_str":"eTag400","update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498535041007640} ] 
+                {"pricing_scenario":"N","wdt_type_id":2,"wdt_tag_type_str":"eTag400","update_date":"Jul 6, 2021 3:57:00 PM","version":0,"layout_id":58498535041007640} ] ,
+    "mnemonics":["brd_name","sib_baseprice","inv_receiptalias","supplier ID","ven_companyname","inv_onhand","inv_powerfield3","inv_discontinued","inv_onorder","SALE_PRICE","inv_location","pi4_description","pi3_description","inv_lastreceived"]
      
 }
 
