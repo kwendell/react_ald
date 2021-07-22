@@ -12,34 +12,28 @@
 
 
 }
-li {
-  text-align: left;
- font-size: 28px;
- font-family: 'Reenie Beanie';
-  font-weight: bold;
- 
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid #ddd;
+  width: 25%;
 }
 
-.work-experience-item {
-	 text-align: left;
- font-size: 28px;
- font-family: 'Reenie Beanie';
-  font-weight: bold;
+ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd;
 }
 
-.work-experience-header {
- text-align: left;
- font-size: 36px;
- font-family: 'Reenie Beanie';
-  font-weight: bold;
+ul li:last-child {
+  border-bottom: none
 }
 
-.big-header {
- text-align: left;
- font-size: 42px;
- font-family: 'Reenie Beanie';
-  font-weight: bold;
-}
+
+
+
+
+
 
 
 
@@ -55,14 +49,7 @@ height:20%;
 .hidden {
 display:none;
 }
-/*
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
- 
-}
-*/
+
 
 .sticky {
   float: left;
