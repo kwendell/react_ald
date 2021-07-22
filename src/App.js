@@ -1,8 +1,11 @@
 import React from 'react';
 
 import './App.css';
-import LayoutExplorer from './LayoutExplorer.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+
+import Mnemonics from './Mnemonics';
+import Design from './Design';
 
 
 
@@ -16,7 +19,7 @@ class App extends React.Component {
   render() {
 
 
-    return   <LayoutExplorer></LayoutExplorer>
+    return   <div><Mnemonics /><Design /></div>
 	
    
   
