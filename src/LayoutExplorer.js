@@ -22,7 +22,7 @@ useEffect(() => {
   //mode: 'cors', // no-cors, *cors, same-origin
   headers.set('mode', 'cors');
   
-  fetch(url,headers).then(response => response.json()).then(data=>setLayouts(data));
+  fetch(url,headers).then(response => response.json()).then(data=>{setLayouts(data)});
        
 });
 
@@ -34,15 +34,14 @@ useEffect(() => {
   
   <thead key="thead">
     <tr key="header">
-      <th key="tagType">Tag Type</th>
-      <th key="lastUpdated">Last Updated</th>
-      <th key="pricing">Pricing</th>
+      <th key="tagType">Price Type</th>
+      <th key="lastUpdated">Tag Type</th>  
 
     </tr>
   </thead>
   <tbody key="tbody">
-      {layouts.map((layouts) => (
-       <tr key={layouts.layout_id}><td className="td-lg"  key={layouts.wdt_tag_type_str} > {layouts.wdt_tag_type_str}</td></tr>
+      {layouts.map((layout) => (
+       <tr key={layout[1]}><td className="td-lg"  key={layout.pricing_scenario} >{layout[0]}</td><td className="td-lg"  key={layout.id} >{layout[1]}</td></tr>
       ))}
   </tbody>
   </table>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import './Ald.css';
 
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
