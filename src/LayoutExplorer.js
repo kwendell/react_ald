@@ -36,6 +36,24 @@ useEffect(() => {
        
 });
 
+let sortedProducts = [...layouts];
+
+
+
+if (sortedField !== null) {
+ // console.log(sortedField);
+ 
+  sortedProducts.sort((a, b) => {
+ //   console.log(a[sortedField]);
+    if (a[sortedField] < b[sortedField]) {
+      return -1;
+    }
+    else if (a[sortedField] > b[sortedField]) {
+      return 1;
+    }
+    return 0;
+  });
+} 
 
 
  return (
@@ -45,15 +63,15 @@ useEffect(() => {
   <thead key="thead">
     <tr key="header">
       <th key="priceType"><button
-              type="button" onClick={() => {setSortedField('priceType');console.log(sortedField)}}>
+              type="button" onClick={() => {setSortedField(0)}}>
             Price Type
             </button></th>
       <th key="tagType"><button
-              type="button" onClick={() => {setSortedField('tagType');console.log(sortedField)}}>
+              type="button" onClick={() => {setSortedField(2)}}>
             Tag Type
             </button></th>  
             <th key="lastUpdated"><button
-              type="button" onClick={() => {setSortedField('lastUpdated');console.log(sortedField)}}>
+              type="button" onClick={() => {setSortedField(3)}}>
             Last Updated
             </button></th>  
 
