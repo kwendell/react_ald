@@ -23,7 +23,7 @@ useEffect(() => {
   headers.set('mode', 'cors');
  
   fetch(url,headers).then(response => response.json()).then(data=>{
-   // console.log(data.length);
+   // extract the tag type from the layout content
    const re = /TagType="([A-Za-z0-9 _]*)"/;
    for (let k=0;k<data.length;k++)  {
     let matchesInside = re.exec(data[k][2]);
@@ -31,17 +31,7 @@ useEffect(() => {
    }
     setLayouts(data)
   });
-  //console.log(layouts[0][2]);
-
-  
-  //
-  for (let i=0;i<layouts.length;i++)  {
-  // let matches = re.exec(layouts[i][2]);
- //  console.log(matches.length);
-  // if (matches.length>0) {
-   // console.log(matches[0]);
-  // }
-  }
+ 
        
 });
 
