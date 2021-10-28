@@ -8,6 +8,7 @@ import { useEffect,useState } from 'react';
 const LayoutExplorer  = () => {
 
 const [layouts, setLayouts] = useState([]);
+const [sortedField, setSortedField] = React.useState(null);
 
 
 
@@ -43,16 +44,16 @@ useEffect(() => {
   
   <thead key="thead">
     <tr key="header">
-      <th key="tagType"><button
-              type="button">
+      <th key="priceType"><button
+              type="button" onClick={() => {setSortedField('priceType');console.log(sortedField)}}>
             Price Type
             </button></th>
-      <th key="lastUpdated"><button
-              type="button">
+      <th key="tagType"><button
+              type="button" onClick={() => {setSortedField('tagType');console.log(sortedField)}}>
             Tag Type
             </button></th>  
             <th key="lastUpdated"><button
-              type="button">
+              type="button" onClick={() => {setSortedField('lastUpdated');console.log(sortedField)}}>
             Last Updated
             </button></th>  
 
@@ -63,7 +64,7 @@ useEffect(() => {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index}><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]} >{layout[3]}</td></tr>
+       <tr key={index}><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>
