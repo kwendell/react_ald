@@ -17,6 +17,12 @@ table {
 	padding: 0.5em;
 	margin-bottom: 1px;
   }
+
+  table tr:hover {
+    background-color: #EBECCD;
+}
+
+
   
  /* th, td {
 	padding: 10px;
