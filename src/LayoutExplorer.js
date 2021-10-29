@@ -16,7 +16,7 @@ const [sortConfig, setSortConfig] = React.useState(null);
 useEffect(() => {
 
 
-  let url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date from layout';
+  let url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_id from layout';
   let username = 'asgadmin';
   let password = 'asgAdm1n!';
   let headers = new Headers();
@@ -103,7 +103,7 @@ const gatherData = (key) => {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index} onClick={() => {gatherData(index)}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
+       <tr key={index} onDoubleClick={() => {gatherData(index)}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>
