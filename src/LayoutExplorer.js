@@ -41,10 +41,10 @@ let sortedProducts = [...layouts];
 
 
 if (sortedField !== null) {
- // console.log(sortedField);
+
  
   sortedProducts.sort((a, b) => {
- //   console.log(a[sortedField]);
+ 
     if (a[sortedField] < b[sortedField]) {
       return -1;
     }

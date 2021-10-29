@@ -1,4 +1,24 @@
-th, td {
+table {
+	width: 100%;
+	border-collapse: collapse;
+  }
+  
+  thead th {
+	text-align: left;
+	border-bottom: 2px solid black;
+  }
+  
+  thead button {
+	border: 0;
+	border-radius: none;
+	font-family: inherit;
+	font-weight: 700;
+	font-size: inherit;
+	padding: 0.5em;
+	margin-bottom: 1px;
+  }
+  
+ /* th, td {
 	padding: 10px;
 	border-bottom: 1px solid #666;
 }
@@ -7,3 +27,4 @@ table {
 	text-align: left;
 	border-collapse: collapse;
 }
+*/
