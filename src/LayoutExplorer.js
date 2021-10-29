@@ -37,20 +37,31 @@ useEffect(() => {
        
 });
 
-let sortedProducts = [...layouts];
+//let sortedProducts = [...layouts];
 
+const requestSort = (key) => {
+  let direction = 'ascending';
+  if (
+    sortConfig &&
+    sortConfig.key === key &&
+    sortConfig.direction === 'ascending'
+  ) {
+    direction = 'descending';
+  }
 
+  setSortConfig({ key, direction });
+};
 
 if (sortConfig !== null) {
 
  
   layouts.sort((a, b) => {
  
-    if (a[sortConfig] < b[sortConfig]) {
-      return -1;
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? -1 : 1;
     }
-    else if (a[sortConfig] > b[sortConfig]) {
-      return 1;
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? 1 : -1;
     }
     return 0;
   });
@@ -64,15 +75,15 @@ if (sortConfig !== null) {
   <thead key="thead">
     <tr key="header">
       <th key="priceType"><button
-              type="button" onClick={() => {setSortConfig(0)}}>
+              type="button" onClick={() => {requestSort(0)}}>
             Price Type
             </button></th>
       <th key="tagType"><button
-              type="button" onClick={() => {setSortConfig(2)}}>
+              type="button" onClick={() => {requestSort(2)}}>
             Tag Type
             </button></th>  
             <th key="lastUpdated"><button
-              type="button" onClick={() => {setSortConfig(3)}}>
+              type="button" onClick={() => {requestSort(3)}}>
             Last Updated
             </button></th>  
 
