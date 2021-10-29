@@ -8,7 +8,8 @@ import { useEffect,useState } from 'react';
 const LayoutExplorer  = () => {
 
 const [layouts, setLayouts] = useState([]);
-const [sortedField, setSortedField] = React.useState(null);
+//const [sortedField, setSortedField] = React.useState(null);
+const [sortConfig, setSortConfig] = React.useState(null);
 
 
 
@@ -40,15 +41,15 @@ let sortedProducts = [...layouts];
 
 
 
-if (sortedField !== null) {
+if (sortConfig !== null) {
 
  
   layouts.sort((a, b) => {
  
-    if (a[sortedField] < b[sortedField]) {
+    if (a[sortConfig] < b[sortConfig]) {
       return -1;
     }
-    else if (a[sortedField] > b[sortedField]) {
+    else if (a[sortConfig] > b[sortConfig]) {
       return 1;
     }
     return 0;
@@ -63,15 +64,15 @@ if (sortedField !== null) {
   <thead key="thead">
     <tr key="header">
       <th key="priceType"><button
-              type="button" onClick={() => {setSortedField(0)}}>
+              type="button" onClick={() => {setSortConfig(0)}}>
             Price Type
             </button></th>
       <th key="tagType"><button
-              type="button" onClick={() => {setSortedField(2)}}>
+              type="button" onClick={() => {setSortConfig(2)}}>
             Tag Type
             </button></th>  
             <th key="lastUpdated"><button
-              type="button" onClick={() => {setSortedField(3)}}>
+              type="button" onClick={() => {setSortConfig(3)}}>
             Last Updated
             </button></th>  
 
