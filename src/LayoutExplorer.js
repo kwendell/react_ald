@@ -43,7 +43,7 @@ let sortedProducts = [...layouts];
 if (sortedField !== null) {
 
  
-  sortedProducts.sort((a, b) => {
+  layouts.sort((a, b) => {
  
     if (a[sortedField] < b[sortedField]) {
       return -1;
