@@ -39,6 +39,8 @@ useEffect(() => {
 
 //let sortedProducts = [...layouts];
 
+
+
 const requestSort = (key) => {
   let direction = 'ascending';
   if (
@@ -51,6 +53,8 @@ const requestSort = (key) => {
 
   setSortConfig({ key, direction });
 };
+
+
 
 if (sortConfig !== null) {
 
@@ -66,6 +70,11 @@ if (sortConfig !== null) {
     return 0;
   });
 } 
+
+const gatherData = (key) => {
+
+  console.log("gather data for "+key);
+};
 
 
  return (
@@ -94,7 +103,7 @@ if (sortConfig !== null) {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index}><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
+       <tr key={index} onClick={() => {gatherData(index)}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>
