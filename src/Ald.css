@@ -18,9 +18,11 @@ table {
 	margin-bottom: 1px;
   }
 
-  table tr:hover {
+  table tbody tr:hover {
     background-color: #EBECCD;
 }
+
+
 
 
   
