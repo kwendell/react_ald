@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useEffect,useState } from 'react';
+import Tr from './Tr';
 
 
 
@@ -29,7 +30,8 @@ useEffect(() => {
    const re = /TagType="([A-Za-z0-9 _]*)"/;
    for (let k=0;k<data.length;k++)  {
     let matchesInside = re.exec(data[k][2]);
-    data[k][2]=matchesInside[1];
+    //data[k][2]=matchesInside[1];
+    data[k]["tagType"]=matchesInside[1];
    }
     setLayouts(data)
   });
@@ -103,7 +105,7 @@ const gatherData = (key) => {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index} onDoubleClick={() => {gatherData(index)}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout[2]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
+       <tr key={index} onDoubleClick={() => {gatherData(layout[2])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>

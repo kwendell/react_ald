@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import './Ald.css';
 
@@ -19,7 +20,7 @@ class App extends React.Component {
   render() {
 
 
-    return   <div><LayoutExplorer /></div>
+    return   <Router><div><LayoutExplorer /></div></Router>;
 	
    
   
