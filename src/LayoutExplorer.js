@@ -73,9 +73,9 @@ if (sortConfig !== null) {
   });
 } 
 
-const gatherData = (key) => {
+const goToDesignPage = (layout) => {
 
-  console.log("gather data for "+key);
+  console.log("gather data for "+layout);
 };
 
 
@@ -105,7 +105,7 @@ const gatherData = (key) => {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index} onDoubleClick={() => {gatherData(layout[2])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
+       <tr key={index} onDoubleClick={() => {goToDesignPage(layout[2])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>
