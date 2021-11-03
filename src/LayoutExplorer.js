@@ -77,7 +77,7 @@ const goToDesignPage = (layout) => {
 
  // console.log("gather data for "+layout);
   history.push(`/design`);
- console.log(history.location);
+
 };
 
 
