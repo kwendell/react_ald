@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { useEffect,useState } from 'react';
-import Tr from './Tr';
+import { useHistory } from "react-router-dom";
+
 
 
 
@@ -9,28 +10,22 @@ import Tr from './Tr';
 const LayoutExplorer  = () => {
 
 const [layouts, setLayouts] = useState([]);
-//const [sortedField, setSortedField] = React.useState(null);
+const history = useHistory();
 const [sortConfig, setSortConfig] = React.useState(null);
-
-
-
+const url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_id from layout';
+const username = 'asgadmin';
+const password = 'asgAdm1n!';
+const headers = new Headers();
+headers.set('Authorization', 'Basic ' + Buffer.from(username + ":" + password).toString('base64'));
+headers.set('mode', 'cors');
 useEffect(() => {
 
-
-  let url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_id from layout';
-  let username = 'asgadmin';
-  let password = 'asgAdm1n!';
-  let headers = new Headers();
-  headers.set('Authorization', 'Basic ' + Buffer.from(username + ":" + password).toString('base64'));
-  //mode: 'cors', // no-cors, *cors, same-origin
-  headers.set('mode', 'cors');
- 
   fetch(url,headers).then(response => response.json()).then(data=>{
    // extract the tag type from the layout content
    const re = /TagType="([A-Za-z0-9 _]*)"/;
    for (let k=0;k<data.length;k++)  {
     let matchesInside = re.exec(data[k][2]);
-    //data[k][2]=matchesInside[1];
+ 
     data[k]["tagType"]=matchesInside[1];
    }
     setLayouts(data)
@@ -38,9 +33,6 @@ useEffect(() => {
  
        
 });
-
-//let sortedProducts = [...layouts];
-
 
 
 const requestSort = (key) => {
@@ -75,7 +67,9 @@ if (sortConfig !== null) {
 
 const goToDesignPage = (layout) => {
 
-  console.log("gather data for "+layout);
+ // console.log("gather data for "+layout);
+  history.push(`/design`);
+ console.log(history.location);
 };
 
 
