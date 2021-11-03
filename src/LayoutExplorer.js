@@ -10,8 +10,10 @@ import { useHistory } from "react-router-dom";
 const LayoutExplorer  = () => {
 
 const [layouts, setLayouts] = useState([]);
+
 const history = useHistory();
 const [sortConfig, setSortConfig] = React.useState(null);
+const [cleanup, setCleanup] = useState(false);
 const url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_id from layout';
 const username = 'asgadmin';
 const password = 'asgAdm1n!';
@@ -19,7 +21,7 @@ const headers = new Headers();
 headers.set('Authorization', 'Basic ' + Buffer.from(username + ":" + password).toString('base64'));
 headers.set('mode', 'cors');
 useEffect(() => {
-
+  if (!cleanup) {
   fetch(url,headers).then(response => response.json()).then(data=>{
    // extract the tag type from the layout content
    const re = /TagType="([A-Za-z0-9 _]*)"/;
@@ -30,6 +32,12 @@ useEffect(() => {
    }
     setLayouts(data)
   });
+}
+
+  return function cleanup() {
+    //console.log("calling clean up");
+    setCleanup(true);
+  };
  
        
 });
