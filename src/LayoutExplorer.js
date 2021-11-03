@@ -14,7 +14,7 @@ const [layouts, setLayouts] = useState([]);
 const history = useHistory();
 const [sortConfig, setSortConfig] = React.useState(null);
 const [cleanup, setCleanup] = useState(false);
-const url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_id from layout';
+const url = '/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_identifier from layout';
 const username = 'asgadmin';
 const password = 'asgAdm1n!';
 const headers = new Headers();
@@ -73,12 +73,12 @@ if (sortConfig !== null) {
   });
 } 
 
-const goToDesignPage = (layout) => {
+const goToDesignPage = (layout_identifier) => {
 
 
   history.push(
     {pathname : '/design',
-     layout : {layout}
+     layout_identifier : {layout_identifier}
    
   }
     
@@ -115,7 +115,7 @@ const goToDesignPage = (layout) => {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index} onDoubleClick={() => {goToDesignPage(layout[2])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
+       <tr key={index} onDoubleClick={() => {goToDesignPage(layout[4])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>

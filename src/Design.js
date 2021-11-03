@@ -17,7 +17,7 @@ const Design =  (props) =>{
       width: width_proportion,
     };
 
-  console.log(history.location.layout);
+  console.log(history.location.layout_identifier);
 
     
    
