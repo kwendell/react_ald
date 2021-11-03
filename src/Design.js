@@ -1,9 +1,10 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 
 
-const Design =  () =>{
-
+const Design =  (props) =>{
+  const history = useHistory();
     const width_proportion='70%';
     const float_value = 'left';
     var designStyle = {      
@@ -15,6 +16,8 @@ const Design =  () =>{
       float:float_value,
       width: width_proportion,
     };
+
+  console.log(history.location.layout);
 
     
    

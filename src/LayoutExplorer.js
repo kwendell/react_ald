@@ -75,8 +75,16 @@ if (sortConfig !== null) {
 
 const goToDesignPage = (layout) => {
 
- // console.log("gather data for "+layout);
-  history.push(`/design`);
+
+  history.push(
+    {pathname : '/design',
+     layout : {layout}
+   
+  }
+    
+    );
+ 
+  
 
 };
 

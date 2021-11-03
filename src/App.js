@@ -5,7 +5,7 @@ import './Ald.css';
 
 import LayoutExplorer from './LayoutExplorer';
 import Design from './Design';
-import Mnemonics from './Mnemonics';
+
 
 
 class App extends React.Component {
@@ -15,7 +15,7 @@ class App extends React.Component {
     return( <Router>
       <Switch>
         <Route exact path="/" ><LayoutExplorer/></Route>
-        <Route path="/design" ><div><Design/></div></Route>
+        <Route path="/design" ><div><Design component={Design} /></div></Route>
       
       </Switch>
       </Router>
