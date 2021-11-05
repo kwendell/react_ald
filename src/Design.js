@@ -18,6 +18,10 @@ const Design =  (props) =>{
     };
 
   console.log(history.location.layout_identifier);
+  console.log(history.location.tagType);
+
+  // issue a fetch with the layout identifier to return a 
+  // serialized JSON layout object
 
     
    

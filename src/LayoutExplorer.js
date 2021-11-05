@@ -73,12 +73,13 @@ if (sortConfig !== null) {
   });
 } 
 
-const goToDesignPage = (layout_identifier) => {
+const goToDesignPage = (layout_identifier, tagType) => {
 
 
   history.push(
     {pathname : '/design',
-     layout_identifier : {layout_identifier}
+     layout_identifier : {layout_identifier},
+     tagType: {tagType}
    
   }
     
@@ -115,7 +116,7 @@ const goToDesignPage = (layout_identifier) => {
       {layouts.map((layout,index) => (
      
       
-       <tr key={index} onDoubleClick={() => {goToDesignPage(layout[4])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
+       <tr key={index} onDoubleClick={() => {goToDesignPage(layout[4],layout["tagType"])}} ><td className="td-lg"  key={layout[0]} >{layout[0]}</td><td className="td-lg"  key={layout[2]} >{layout["tagType"]}</td><td className="td-lg"  key={layout[3]+index} >{layout[3]}</td></tr>
       ))}
   </tbody>
   </table>
