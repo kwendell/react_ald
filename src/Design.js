@@ -17,11 +17,24 @@ const Design =  (props) =>{
       width: width_proportion,
     };
 
-  console.log(history.location.layout_identifier);
-  console.log(history.location.tagType);
+ // console.log(history.location.layout_identifier);
+ 
 
-  // issue a fetch with the layout identifier to return a 
-  // serialized JSON layout object
+const url = `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=`+history.location.tagType.tagType;
+
+const username = 'asgadmin';
+const password = 'asgAdm1n!';
+const headers = new Headers();
+headers.set('Authorization', 'Basic ' + Buffer.from(username + ":" + password).toString('base64'));
+headers.set('mode', 'cors');
+
+  fetch(url,headers).then(response => response.json()).then(data=>{
+    // extract the tag type from the layout content
+   
+   console.log(data);
+  
+   });
+ 
 
     
    

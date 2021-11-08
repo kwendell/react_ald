@@ -85,7 +85,7 @@ const goToDesignPage = (layout_identifier, tagType) => {
     
     );
  
-  
+
 
 };
 
