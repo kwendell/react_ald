@@ -32,7 +32,20 @@ const  Mnemonics  = () => {
        
 
 
-   
+       const mnemonicsUrl = `/altierre/asg/ws/apt/getMnemonics`;
+       const username = 'asgadmin';
+       const password = 'asgAdm1n!';
+       const headers = new Headers();
+       headers.set('Authorization', 'Basic ' + Buffer.from(username + ":" + password).toString('base64'));
+       headers.set('mode', 'cors');
+
+  
+ 
+       fetch(mnemonicsUrl,headers).then(response => response.json()).then(data=>{
+       // console.log(data);
+       setMnemonics(data);
+          
+       });
       
 
     return (<table style={tableStyle}>{mnemonics.map((mnemonic) => (

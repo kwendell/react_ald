@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useState } from 'react';
+import Mnemonics from './Mnemonics';
 
 const Design =  (props) =>{
   const [width, setWidth] = useState(0);
@@ -40,7 +41,7 @@ const Design =  (props) =>{
   
  
    fetch(layoutUrl,headers).then(response => response.json()).then(data=>{
-    console.log(data);
+   // console.log(data);
       
    });
   
@@ -51,7 +52,7 @@ const Design =  (props) =>{
     borderRadius:8,
   };
     
-    return (<div style={designStyle}><div><canvas style={canvasStyle} width={width} height={height}></canvas ></div></div>);
+    return (<div style={designStyle}><Mnemonics/><div><canvas style={canvasStyle} width={width} height={height}></canvas ></div></div>);
 }
   
 
