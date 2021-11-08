@@ -48,9 +48,9 @@ const  Mnemonics  = () => {
        });
       
 
-    return (<table style={tableStyle}>{mnemonics.map((mnemonic) => (
-        <tr><td style={liStyle} key={mnemonic}>{mnemonic}</td><td><button onClick={console.log("button click")} key={mnemonic+"btn"} id={mnemonic+"btn"} type="submit">+</button></td></tr>
-       ))}</table>);
+    return (<table style={tableStyle}><tbody>{mnemonics.map((mnemonic,index) => (
+        <tr key={index+"tr"}><td style={liStyle} key={index}>{mnemonic}</td><td key={index+"td"}><button  key={index} id={mnemonic+"btn"} type="submit">+</button></td></tr>
+       ))}</tbody></table>);
 
 }
 
