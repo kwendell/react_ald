@@ -24,6 +24,10 @@ const Design =  (props) =>{
       width: width_proportion,
   };
 
+  useEffect(() => {
+    setCanvas(initCanvas());
+  }, []);
+
   const url = `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=`+history.location.tagType.tagType;
   const username = 'asgadmin';
   const password = 'asgAdm1n!';
@@ -51,16 +55,13 @@ const Design =  (props) =>{
   //  console.log(data.screens[0].fields[0]);
 
       for (let i=0; i<data.screens[0].fields.length; i++)  {
-        console.log(data.screens[0].fields[i].name);
+       // console.log(data.screens[0].fields[i].name);
+       console.log(canvas);
       }
    });
 
    const initCanvas = () => (
-    new fabric.Canvas('screen', {
-       height: 800,
-       width: 800,
-       backgroundColor: 'pink'
-    })
+    new fabric.Canvas('screen', {})
  );
   
   
