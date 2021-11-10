@@ -54,6 +54,14 @@ const Design =  (props) =>{
         console.log(data.screens[0].fields[i].name);
       }
    });
+
+   const initCanvas = () => (
+    new fabric.Canvas('screen', {
+       height: 800,
+       width: 800,
+       backgroundColor: 'pink'
+    })
+ );
   
   
   
