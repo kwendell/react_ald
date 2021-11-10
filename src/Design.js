@@ -1,13 +1,17 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {fabric} from 'fabric';
+
+
 import Mnemonics from './Mnemonics';
 
 
 const Design =  (props) =>{
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-  const [layout,setLayout] = useState([]);
+
+  const [canvas, setCanvas] = useState('');
   const history = useHistory();
   const width_proportion='70%';
   const float_value = 'left';
@@ -19,6 +23,10 @@ const Design =  (props) =>{
       float:float_value,
       width: width_proportion,
   };
+
+  
+
+ 
  
   const url = `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=`+history.location.tagType.tagType;
   const username = 'asgadmin';
@@ -39,8 +47,6 @@ const Design =  (props) =>{
     */
    const layoutUrl = `/altierre/asg/ws/apt/getLayoutInfo?layoutIdentifierStr=`+history.location.layout_identifier.layout_identifier;
 
-  
- 
    fetch(layoutUrl,headers).then(response => response.json()).then(data=>{
    
   //  console.log(data.pricingScenario);
@@ -48,7 +54,9 @@ const Design =  (props) =>{
    // console.log(data.screens[0].fields[1].x+", "+data.screens[0].fields[1].y+", "+data.screens[0].fields[1].name+", "+data.screens[0].fields[1].width+", "+data.screens[0].fields[1].height);
   //  console.log(data.screens[0].fields[0]);
 
-      
+      for (let i=0; i<data.screens[0].fields.length; i++)  {
+        console.log(data.screens[0].fields[i].name);
+      }
    });
   
   
@@ -57,6 +65,8 @@ const Design =  (props) =>{
     border: '6px solid white', 
     borderRadius:8,
   };
+
+  
     
     return (<div style={designStyle}><Mnemonics/><div><canvas id="screen"style={canvasStyle} width={width} height={height}></canvas ></div></div>);
 }
