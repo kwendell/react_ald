@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import {fabric} from 'fabric';
+import { fabric } from "fabric";
 
 
 import Mnemonics from './Mnemonics';
@@ -24,10 +24,6 @@ const Design =  (props) =>{
       width: width_proportion,
   };
 
-  
-
- 
- 
   const url = `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=`+history.location.tagType.tagType;
   const username = 'asgadmin';
   const password = 'asgAdm1n!';
