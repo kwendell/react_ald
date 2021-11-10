@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useState } from 'react';
 import Mnemonics from './Mnemonics';
 
+
 const Design =  (props) =>{
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
@@ -41,7 +42,12 @@ const Design =  (props) =>{
   
  
    fetch(layoutUrl,headers).then(response => response.json()).then(data=>{
-   // console.log(data);
+   
+  //  console.log(data.pricingScenario);
+   // console.log(data.tagType);
+   // console.log(data.screens[0].fields[1].x+", "+data.screens[0].fields[1].y+", "+data.screens[0].fields[1].name+", "+data.screens[0].fields[1].width+", "+data.screens[0].fields[1].height);
+  //  console.log(data.screens[0].fields[0]);
+
       
    });
   
@@ -52,7 +58,7 @@ const Design =  (props) =>{
     borderRadius:8,
   };
     
-    return (<div style={designStyle}><Mnemonics/><div><canvas style={canvasStyle} width={width} height={height}></canvas ></div></div>);
+    return (<div style={designStyle}><Mnemonics/><div><canvas id="screen"style={canvasStyle} width={width} height={height}></canvas ></div></div>);
 }
   
 
