@@ -28,7 +28,7 @@ const Design =  (props) =>{
 
   useLayoutEffect(() => {
 
-    console.log(width+", "+height);
+   
     if (height>0 && width>0)  {
     const canvas = new fabric.Canvas('screen', {
       height: height,
@@ -72,7 +72,7 @@ canvas.requestRenderAll()
 
    fetch(layoutUrl,headers).then(response => response.json()).then(data=>{
    
-   
+    
    
    });
 
