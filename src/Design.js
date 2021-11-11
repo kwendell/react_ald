@@ -20,27 +20,31 @@ const Design =  (props) =>{
       padding: 20,
       backgroundColor: "#f1f1f1",    
       position:"relative",
-      float:"left"
+      float:"left",
+      width:"100%",
+      height:"100%"
 
   };
 
   useLayoutEffect(() => {
-console.log("useLayoutEffect"+width);
+
+    console.log(width+", "+height);
+    if (height>0 && width>0)  {
+    const canvas = new fabric.Canvas('screen', {
+      height: height,
+      width: width,
+      stopContextMenu: true,
+      backgroundColor: undefined,
+      backgroundImage: undefined,
+     
+});
+
+
+canvas.requestRenderAll()
+
+  }
   });
-/*
-  useEffect(() => {
-    setCanvas(initCanvas());
-  
 
- 
-  }, []);
-
-  const initCanvas = () => (
-    
-    new fabric.Canvas('screen', {height:400,width:400})
- );
-
- */
 
  
   const url = `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=`+history.location.tagType.tagType;
@@ -72,19 +76,17 @@ console.log("useLayoutEffect"+width);
    
    });
 
-   
-  
-  
-  
+   const height_value = '20%';
    var canvasStyle = {
     border: '6px solid white', 
     borderRadius:8,
+    height:height_value
     
   };
 
   
     
-    return (<div style={designStyle}><Mnemonics/><canvas id="screen"style={canvasStyle} width={width} height={height}></canvas ></div>);
+    return (<div style={designStyle}><Mnemonics/><canvas id="screen" style={canvasStyle} ></canvas ></div>);
 }
   
 
