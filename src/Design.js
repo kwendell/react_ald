@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { fabric } from "fabric";
-
+import './Ald.css';
 
 import Mnemonics from './Mnemonics';
 
@@ -86,7 +86,7 @@ canvas.requestRenderAll()
 
   
     
-    return (<div style={designStyle}><Mnemonics/><canvas id="screen" style={canvasStyle} ></canvas ></div>);
+    return (<div style={designStyle}><Mnemonics/><div id="canvas-wrapper"><canvas id="screen" style={canvasStyle} ></canvas ></div></div>);
 }
   
 

@@ -14,9 +14,6 @@ const  Mnemonics  = () => {
     const liStyle = {
 	    fontSize: 14,
 		fontFamily: "monospace",
-		
-      
-      
 		color: "#0080A8",
         backgroundColor: "#f1f1f1",
        

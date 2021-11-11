@@ -23,7 +23,12 @@ table {
 }
 
 
-
+#canvas-wrapper {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+  }
+  
 
   
  /* th, td {
