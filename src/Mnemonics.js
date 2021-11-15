@@ -40,11 +40,8 @@ const  Mnemonics  = () => {
 
   
  
-       fetch(mnemonicsUrl,headers).then(response => response.json()).then(data=>{
-       // console.log(data);
-       setMnemonics(data);
-          
-       });
+       fetch(mnemonicsUrl,headers).then(response => response.json()).then(data=>{setMnemonics(data);
+});
       
 
     return (<table style={tableStyle}><tbody>{mnemonics.map((mnemonic,index) => (
