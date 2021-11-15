@@ -23,6 +23,8 @@ headers.set('mode', 'cors');
 useEffect(() => {
   if (!cleanup) {
   fetch(url,headers).then(response => response.json()).then(data=>{
+
+    console.log("LayoutExplorer::fetch()");
    // extract the tag type from the layout content
    const re = /TagType="([A-Za-z0-9 _]*)"/;
    for (let k=0;k<data.length;k++)  {

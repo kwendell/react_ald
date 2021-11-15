@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { fabric } from "fabric";
 import './Ald.css';
 
@@ -11,10 +11,9 @@ const Design =  (props) =>{
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
-  const [canvas, setCanvas] = useState('');
   const history = useHistory();
-  const width_proportion='70%';
-  const float_value = 'left';
+
+
   var designStyle = {      
       display: "inline-block",
       padding: 20,
