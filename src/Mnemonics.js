@@ -2,6 +2,9 @@ import React from 'react';
 
 import { useState } from 'react';
 
+import {QueryClient, useQuery } from 'react-query';
+
+
 
 
 
@@ -31,7 +34,7 @@ const  Mnemonics  = () => {
        
 
 
-       const mnemonicsUrl = `/altierre/asg/ws/apt/getMnemonics`;
+      
        const username = 'asgadmin';
        const password = 'asgAdm1n!';
        const headers = new Headers();
@@ -40,9 +43,18 @@ const  Mnemonics  = () => {
 
   
  
-       fetch(mnemonicsUrl,headers).then(response => response.json()).then(data=>{setMnemonics(data);
-});
-      
+      // fetch(mnemonicsUrl,headers).then(response => response.json()).then(data=>{    setMnemonics(data);   });
+       
+   
+
+       const { isLoading, error, data, isFetching } = useQuery("mnemonicsKey", () =>
+       fetch(
+        "/altierre/asg/ws/apt/getMnemonics",headers
+      ).then((res) => res.json()).then(data=>{setMnemonics(data);console.log(data[5])})
+    );
+          
+    
+  
 
     return (<table style={tableStyle}><tbody>{mnemonics.map((mnemonic,index) => (
         <tr key={index+"tr"}><td style={liStyle} key={index}>{mnemonic}</td><td key={index+"td"}><button  key={index} id={mnemonic+"btn"} type="submit">+</button></td></tr>
