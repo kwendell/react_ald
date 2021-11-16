@@ -23,7 +23,7 @@ const queryClient = new QueryClient({
       refetchOnReconnect: false,
       retry: false,
      
-      cacheTime: 1
+      cacheTime: 20
     },
   },
 });
