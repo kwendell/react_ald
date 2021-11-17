@@ -71,7 +71,7 @@ canvas.requestRenderAll()
 
    fetch(layoutUrl,headers).then(response => response.json()).then(data=>{
    
-    
+    // Here is where we add to the canvas
    
    });
 
