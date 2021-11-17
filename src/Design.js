@@ -72,6 +72,16 @@ canvas.requestRenderAll()
    fetch(layoutUrl,headers).then(response => response.json()).then(data=>{
    
     // Here is where we add to the canvas
+
+    const canvas = new fabric.Canvas('c');
+  
+    for (var screenIter = 0 ; screenIter < data.screens.length; screenIter++)  {
+      for (var fieldIter = 0 ; fieldIter < data.screens[screenIter].fields.length; fieldIter++)  {
+        console.log(data.screens[screenIter].fields[fieldIter].name);
+      }
+      
+    }
+    console.log("-------");
    
    });
 
