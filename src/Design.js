@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { fabric } from "fabric";
 import './Ald.css';
 
@@ -12,6 +12,15 @@ const Design =  (props) =>{
   const [height, setHeight] = useState(0);
 
   const history = useHistory();
+  const canvasRef = useRef(null)
+  
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const context = canvas.getContext('2d')
+    //Our first draw
+    //context.fillStyle = '#000000'
+    //context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+  }, [])
 
 
   var designStyle = {      
@@ -25,24 +34,7 @@ const Design =  (props) =>{
 
   };
 
-  useLayoutEffect(() => {
-
-   
-    if (height>0 && width>0)  {
-    const canvas = new fabric.Canvas('screen', {
-      height: height,
-      width: width,
-      stopContextMenu: true,
-      backgroundColor: undefined,
-      backgroundImage: undefined,
-     
-});
-
-
-canvas.requestRenderAll()
-
-  }
-  });
+ 
 
 
  
@@ -73,15 +65,15 @@ canvas.requestRenderAll()
    
     // Here is where we add to the canvas
 
-    const canvas = new fabric.Canvas('c');
+  
   
     for (var screenIter = 0 ; screenIter < data.screens.length; screenIter++)  {
       for (var fieldIter = 0 ; fieldIter < data.screens[screenIter].fields.length; fieldIter++)  {
-        console.log(data.screens[screenIter].fields[fieldIter].name);
+     //   console.log(data.screens[screenIter].fields[fieldIter].name);
       }
       
     }
-    console.log("-------");
+ //   console.log("-------");
    
    });
 
@@ -95,7 +87,7 @@ canvas.requestRenderAll()
 
   
     
-    return (<div style={designStyle}><Mnemonics/><div id="canvas-wrapper"><canvas id="screen" style={canvasStyle} ></canvas ></div></div>);
+    return (<div style={designStyle}><Mnemonics/><canvas id="screen" style={canvasStyle} ref={canvasRef} ></canvas ></div>);
 }
   
 
