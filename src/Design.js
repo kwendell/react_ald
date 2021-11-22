@@ -18,6 +18,7 @@ const Design =  (props) =>{
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
     //Our first draw
+    console.log(canvas);
     //context.fillStyle = '#000000'
     //context.fillRect(0, 0, context.canvas.width, context.canvas.height)
   }, [])

@@ -50,7 +50,7 @@ const  Mnemonics  = () => {
        const { isLoading, error, data, isFetching } = useQuery("mnemonicsKey", () =>
        fetch(
         "/altierre/asg/ws/apt/getMnemonics",headers
-      ).then((res) => res.json()).then(data=>{setMnemonics(data);console.log("fetching...")})
+      ).then((res) => res.json()).then(data=>{setMnemonics(data)})
     );
           
     
