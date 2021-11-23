@@ -14,6 +14,14 @@ const Design = (props) => {
   const history = useHistory();
   const canvasRef = useRef(null);
 
+  /*
+   *  Obtain JSON layout from layout identifier
+   *http://localhost:8080/altierre/asg/ws/apt/getLayoutInfo?layoutIdentifierStr=555736136694090254
+   */
+  const layoutUrl =
+    `/altierre/asg/ws/apt/getLayoutInfo?layoutIdentifierStr=` +
+    history.location.layout_identifier.layout_identifier;
+
   const url =
     `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=` +
     history.location.tagType.tagType;
@@ -25,12 +33,8 @@ const Design = (props) => {
     "Basic " + Buffer.from(username + ":" + password).toString("base64")
   );
   headers.set("mode", "cors");
-
+  const canvas = canvasRef.current;
   useEffect(() => {
-    const canvas = canvasRef.current;
-    console.log("useEffect");
-    // console.log(layout[0].screens[0]);
-
     fetch(url, headers)
       .then((response) => response.json())
       .then((data) => {
@@ -40,32 +44,10 @@ const Design = (props) => {
 
         setLayout(data);
 
-        /*
-         *  Obtain JSON layout from layout identifier
-         *http://localhost:8080/altierre/asg/ws/apt/getLayoutInfo?layoutIdentifierStr=555736136694090254
-         */
-        const layoutUrl =
-          `/altierre/asg/ws/apt/getLayoutInfo?layoutIdentifierStr=` +
-          history.location.layout_identifier.layout_identifier;
-
         fetch(layoutUrl, headers)
           .then((response) => response.json())
           .then((data) => {
             setLayout(data);
-
-            for (
-              var screenIter = 0;
-              screenIter < data.screens.length;
-              screenIter++
-            ) {
-              for (
-                var fieldIter = 0;
-                fieldIter < data.screens[screenIter].fields.length;
-                fieldIter++
-              ) {
-                //   console.log(layout.screens[screenIter].fields[fieldIter].name);
-              }
-            }
           });
       }, []);
   });
