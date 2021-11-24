@@ -38,6 +38,11 @@ const Mnemonics = () => {
       })
   );
 
+  if (isLoading) return "Loading...";
+  if (error) return `Error!`;
+  if (data) return "data";
+  if (isFetching) return "fetching";
+
   return (
     <table style={tableStyle}>
       <tbody>
