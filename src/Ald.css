@@ -1,38 +1,34 @@
 table {
-	width: 100%;
-	border-collapse: collapse;
-  }
-  
-  thead th {
-	text-align: left;
-	border-bottom: 2px solid black;
-  }
-  
-  thead button {
-	border: 0;
-	border-radius: none;
-	font-family: inherit;
-	font-weight: 700;
-	font-size: inherit;
-	padding: 0.5em;
-	margin-bottom: 1px;
-  }
-
-  table tbody tr:hover {
-    background-color: #EBECCD;
+  width: 100%;
+  border-collapse: collapse;
 }
 
+thead th {
+  text-align: left;
+  border-bottom: 2px solid black;
+}
+
+thead button {
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  padding: 0.5em;
+  margin-bottom: 1px;
+}
+
+table tbody tr:hover {
+  background-color: #ebeccd;
+}
 
 #canvas-wrapper {
-	position: absolute;
-	top: 15%;
-	left: 25%;
-	
-  }
-  
+  position: relative;
+  top: 30%;
+  left: 10%;
+}
 
-  
- /* th, td {
+/* th, td {
 	padding: 10px;
 	border-bottom: 1px solid #666;
 }
