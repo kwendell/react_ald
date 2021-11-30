@@ -8,26 +8,18 @@ import { fabric } from "fabric";
 
 import Mnemonics from "./Mnemonics";
 
+const useSingleton = (initializer) => {
+  React.useState(initializer);
+};
 const Design = (props) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [layout, setLayout] = useState([]);
   const [canvas, setCanvas] = useState("");
+  const [constructorHasRun, setConstructorHasRun] = useState(false);
 
   const history = useHistory();
   const canvasRef = useRef(null);
-
-  const initCanvas = () =>
-    new fabric.Canvas("screen", {
-      height: height,
-      width: width,
-      backgroundColor: "pink",
-    });
-
-  useEffect(() => {
-    //  setCanvas(initCanvas());
-    // console.log("useEffect, height" + height);
-  }, []);
 
   /*
    *  Obtain JSON layout from layout identifier
@@ -49,22 +41,21 @@ const Design = (props) => {
   );
   headers.set("mode", "cors");
 
-  useQuery("setDimensionKey", () =>
+  useSingleton(() => {
     fetch(url, headers)
       .then((response) => response.json())
       .then((data) => {
         // extract the tag type from the layout content
         setWidth(data[0]);
         setHeight(data[1]);
-      })
-  );
-  useQuery("setLayoutKey", () =>
+      });
+
     fetch(layoutUrl, headers)
       .then((response) => response.json())
       .then((data) => {
         setLayout(data);
-      }, [])
-  );
+      }, []);
+  });
 
   var canvasStyle = {
     border: "4px solid white",
