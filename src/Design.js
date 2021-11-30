@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 //import { fabric } from "fabric";
 import "./Ald.css";
-import { useQuery } from "react-query";
+
 import { fabric } from "fabric";
 
 import Mnemonics from "./Mnemonics";
