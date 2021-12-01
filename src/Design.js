@@ -16,7 +16,6 @@ const Design = (props) => {
   const [height, setHeight] = useState(0);
   const [layout, setLayout] = useState([]);
   const [canvas, setCanvas] = useState("");
-  const [constructorHasRun, setConstructorHasRun] = useState(false);
 
   const history = useHistory();
   const canvasRef = useRef(null);
@@ -42,26 +41,39 @@ const Design = (props) => {
   headers.set("mode", "cors");
 
   useSingleton(() => {
+    // obtain the height and width of the screen.
     fetch(url, headers)
       .then((response) => response.json())
       .then((data) => {
         // extract the tag type from the layout content
         setWidth(data[0]);
         setHeight(data[1]);
+        // get the instance of the fabric canvas
+        const canv = new fabric.Canvas("screen", {
+          height: data[1],
+          width: data[0],
+        });
+        setCanvas(canv);
+        console.log("complete fetch 1");
       });
 
+    // obtain and set the layout data
     fetch(layoutUrl, headers)
       .then((response) => response.json())
       .then((data) => {
         setLayout(data);
+        //console.log(data.screens[0].fields[0].name);
+        //console.log(data.screens[0].fields[0].x);
+        //console.log(data.screens[0].fields[0].y);
+        //console.log(data.screens[0].fields[0].width);
+        //console.log(data.screens[0].fields[0].height);
+        console.log("complete fetch 2");
       }, []);
   });
 
   var canvasStyle = {
     border: "4px solid white",
     borderRadius: 4,
-    //  height: 300,
-    //  width: 400,
   };
 
   var designStyle = {
