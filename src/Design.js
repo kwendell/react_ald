@@ -57,19 +57,6 @@ const Design = (props) => {
 
       setCanvas(canv);
       // begin
-      var dummy = new fabric.Rect({
-        left: 0,
-        top: 0,
-        //fill: "#F9F9F9",
-        fill: "red",
-        width: 20,
-        height: 20,
-        opacity: 1.0,
-        // stroke : 'blue',
-        // strokeWidth : 1
-      });
-
-      canv.add(dummy);
 
       console.log("1st fetch");
       // end
@@ -92,9 +79,25 @@ const Design = (props) => {
 
     requestLayoutAwait();
   });
-  if (layout.id) {
-    console.log({ layout });
+  if (layout.id && width > 0 && height > 0 && canvas) {
     console.log(layout.screens[0].fields[0].name);
+
+    console.log(width);
+    console.log(height);
+    console.log("canvas: " + canvas.width);
+    var dummy = new fabric.Rect({
+      left: 0,
+      top: 0,
+      //fill: "#F9F9F9",
+      fill: "red",
+      width: 20,
+      height: 20,
+      opacity: 1.0,
+      // stroke : 'blue',
+      // strokeWidth : 1
+    });
+
+    canvas.add(dummy);
   }
 
   var canvasStyle = {
