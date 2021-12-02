@@ -55,6 +55,20 @@ const Design = (props) => {
         width: json[0],
       });
 
+      var dummy = new fabric.Rect({
+        left: 0,
+        top: 0,
+        //fill: "#F9F9F9",
+        fill: "red",
+        width: 20,
+        height: 20,
+        opacity: 1.0,
+        // stroke : 'blue',
+        // strokeWidth : 1
+      });
+
+      canv.add(dummy);
+
       setCanvas(canv);
       // begin
 
@@ -85,19 +99,6 @@ const Design = (props) => {
     console.log(width);
     console.log(height);
     console.log("canvas: " + canvas.width);
-    var dummy = new fabric.Rect({
-      left: 0,
-      top: 0,
-      //fill: "#F9F9F9",
-      fill: "red",
-      width: 20,
-      height: 20,
-      opacity: 1.0,
-      // stroke : 'blue',
-      // strokeWidth : 1
-    });
-
-    canvas.add(dummy);
   }
 
   var canvasStyle = {
