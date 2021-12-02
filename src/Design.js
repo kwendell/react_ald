@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useState, useRef } from "react";
+import ReactDOM from "react-dom";
 //import { fabric } from "fabric";
 import "./Ald.css";
 
@@ -15,7 +16,7 @@ const Design = (props) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [layout, setLayout] = useState([]);
-  const [canvas, setCanvas] = useState("");
+  const [canvas, setCanvas] = useState(React.createRef());
 
   const history = useHistory();
   const canvasRef = useRef(null);
@@ -42,34 +43,59 @@ const Design = (props) => {
 
   useSingleton(() => {
     // obtain the height and width of the screen.
-    fetch(url, headers)
-      .then((response) => response.json())
-      .then((data) => {
-        // extract the tag type from the layout content
-        setWidth(data[0]);
-        setHeight(data[1]);
-        // get the instance of the fabric canvas
-        const canv = new fabric.Canvas("screen", {
-          height: data[1],
-          width: data[0],
-        });
-        setCanvas(canv);
-        console.log("complete fetch 1");
+    const requestDimensionAwait = async (id = 100) => {
+      const response = await fetch(url, headers);
+      const json = await response.json();
+
+      setWidth(json[0]);
+      setHeight(json[1]);
+      // get the instance of the fabric canvas
+      let canv = new fabric.Canvas("screen", {
+        height: json[1],
+        width: json[0],
       });
 
+      setCanvas(canv);
+      // begin
+      var dummy = new fabric.Rect({
+        left: 0,
+        top: 0,
+        //fill: "#F9F9F9",
+        fill: "red",
+        width: 20,
+        height: 20,
+        opacity: 1.0,
+        // stroke : 'blue',
+        // strokeWidth : 1
+      });
+
+      canv.add(dummy);
+
+      console.log("1st fetch");
+      // end
+    };
+
+    requestDimensionAwait();
+
     // obtain and set the layout data
-    fetch(layoutUrl, headers)
-      .then((response) => response.json())
-      .then((data) => {
-        setLayout(data);
-        //console.log(data.screens[0].fields[0].name);
-        //console.log(data.screens[0].fields[0].x);
-        //console.log(data.screens[0].fields[0].y);
-        //console.log(data.screens[0].fields[0].width);
-        //console.log(data.screens[0].fields[0].height);
-        console.log("complete fetch 2");
-      }, []);
+    const requestLayoutAwait = async (id = 101) => {
+      const response = await fetch(layoutUrl, headers);
+      const json = await response.json();
+      setLayout(json);
+      console.log("2nd fetch");
+      //  console.log(json.screens[0].fields[0].name);
+      //console.log(data.screens[0].fields[0].x);
+      //console.log(data.screens[0].fields[0].y);
+      //console.log(data.screens[0].fields[0].width);
+      //console.log(data.screens[0].fields[0].height);
+    };
+
+    requestLayoutAwait();
   });
+  if (layout.id) {
+    console.log({ layout });
+    console.log(layout.screens[0].fields[0].name);
+  }
 
   var canvasStyle = {
     border: "4px solid white",
