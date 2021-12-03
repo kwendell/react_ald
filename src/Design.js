@@ -64,16 +64,22 @@ const Design = (props) => {
     requestLayoutAwait();
   });
   if (layout.id && width > 0 && height > 0 && canvas && !initialized) {
-    const canv = new fabric.Canvas("screen", {
+    var canv = new fabric.Canvas("screen", {
       height: height,
       width: width,
+      isDrawingMode: false,
     });
+
+    //   canv.on("object:rotating", function (options) {
+    //    var step = 90;
+    //  options.target.angle = Math.round(options.target.angle / step) * step;
+    // });
+
     for (
       let fieldIndex = 0;
       fieldIndex < layout.screens[0].fields.length;
       fieldIndex++
     ) {
-      console.log(layout.screens[0].fields[fieldIndex].name);
       var dummy = new fabric.Rect({
         //left: layout.screens[0].fields[fieldIndex].x,
         //top: layout.screens[0].fields[fieldIndex].y,
@@ -83,7 +89,7 @@ const Design = (props) => {
         height: layout.screens[0].fields[fieldIndex].height,
         opacity: 1.0,
 
-        stroke: "red",
+        stroke: "white",
         strokeWidth: 2,
         selectable: true,
       });
@@ -93,7 +99,7 @@ const Design = (props) => {
         // originY: "center",
         lockScalingX: true,
         lockSkewingX: true,
-        textAlign: "left",
+        textAlign: "center",
 
         //left: 20,
       });
@@ -101,6 +107,7 @@ const Design = (props) => {
       var group = new fabric.Group([dummy, text], {
         left: layout.screens[0].fields[fieldIndex].x,
         top: layout.screens[0].fields[fieldIndex].y,
+        snapAngle: 90,
       });
 
       canv.add(group);
