@@ -111,6 +111,20 @@ const Design = (props) => {
       });
 
       canv.add(group);
+
+      canv.on({
+        "object:scaling": handleScalingEvent,
+      });
+
+      function handleScalingEvent(obj) {
+        var text = obj.target.item(1),
+          group = obj.target;
+        const scaleX = group.width / (group.width * group.scaleX);
+        const scaleY = group.height / (group.height * group.scaleY);
+
+        text.set("scaleX", scaleX);
+        text.set("scaleY", scaleY);
+      }
     }
 
     setInitialized(true);
