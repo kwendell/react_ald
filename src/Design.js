@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useState, useRef } from "react";
-import ReactDOM from "react-dom";
+
 //import { fabric } from "fabric";
 import "./Ald.css";
 
@@ -17,6 +17,7 @@ const Design = (props) => {
   const [height, setHeight] = useState(0);
   const [layout, setLayout] = useState([]);
   const [canvas, setCanvas] = useState(React.createRef());
+  const [initialized, setInitialized] = useState(false);
 
   const history = useHistory();
   const canvasRef = useRef(null);
@@ -49,31 +50,6 @@ const Design = (props) => {
 
       setWidth(json[0]);
       setHeight(json[1]);
-      // get the instance of the fabric canvas
-      let canv = new fabric.Canvas("screen", {
-        height: json[1],
-        width: json[0],
-      });
-
-      var dummy = new fabric.Rect({
-        left: 0,
-        top: 0,
-        //fill: "#F9F9F9",
-        fill: "red",
-        width: 20,
-        height: 20,
-        opacity: 1.0,
-        // stroke : 'blue',
-        // strokeWidth : 1
-      });
-
-      canv.add(dummy);
-
-      setCanvas(canv);
-      // begin
-
-      console.log("1st fetch");
-      // end
     };
 
     requestDimensionAwait();
@@ -83,22 +59,38 @@ const Design = (props) => {
       const response = await fetch(layoutUrl, headers);
       const json = await response.json();
       setLayout(json);
-      console.log("2nd fetch");
-      //  console.log(json.screens[0].fields[0].name);
-      //console.log(data.screens[0].fields[0].x);
-      //console.log(data.screens[0].fields[0].y);
-      //console.log(data.screens[0].fields[0].width);
-      //console.log(data.screens[0].fields[0].height);
     };
 
     requestLayoutAwait();
   });
-  if (layout.id && width > 0 && height > 0 && canvas) {
-    console.log(layout.screens[0].fields[0].name);
+  if (layout.id && width > 0 && height > 0 && canvas && !initialized) {
+    const canv = new fabric.Canvas("screen", {
+      height: height,
+      width: width,
+    });
+    for (
+      let fieldIndex = 0;
+      fieldIndex < layout.screens[0].fields.length;
+      fieldIndex++
+    ) {
+      console.log(layout.screens[0].fields[fieldIndex].name);
+    }
+    var dummy = new fabric.Rect({
+      left: 10,
+      top: 10,
 
-    console.log(width);
-    console.log(height);
-    console.log("canvas: " + canvas.width);
+      fill: "red",
+      width: 20,
+      height: 10,
+      opacity: 1.0,
+
+      stroke: "white",
+      strokeWidth: 1,
+      selectable: true,
+    });
+
+    canv.add(dummy);
+    setInitialized(true);
   }
 
   var canvasStyle = {
