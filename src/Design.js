@@ -75,20 +75,35 @@ const Design = (props) => {
     ) {
       console.log(layout.screens[0].fields[fieldIndex].name);
       var dummy = new fabric.Rect({
-        left: layout.screens[0].fields[fieldIndex].x,
-        top: layout.screens[0].fields[fieldIndex].y,
+        //left: layout.screens[0].fields[fieldIndex].x,
+        //top: layout.screens[0].fields[fieldIndex].y,
         fill: "#f1f1f1",
 
         width: layout.screens[0].fields[fieldIndex].width,
         height: layout.screens[0].fields[fieldIndex].height,
         opacity: 1.0,
 
-        stroke: "white",
+        stroke: "red",
         strokeWidth: 2,
         selectable: true,
       });
+      var text = new fabric.Text(layout.screens[0].fields[fieldIndex].name, {
+        fontSize: 11,
+        // originX: "center",
+        // originY: "center",
+        lockScalingX: true,
+        lockSkewingX: true,
+        textAlign: "left",
 
-      canv.add(dummy);
+        //left: 20,
+      });
+
+      var group = new fabric.Group([dummy, text], {
+        left: layout.screens[0].fields[fieldIndex].x,
+        top: layout.screens[0].fields[fieldIndex].y,
+      });
+
+      canv.add(group);
     }
 
     setInitialized(true);
