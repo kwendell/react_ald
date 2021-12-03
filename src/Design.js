@@ -74,22 +74,23 @@ const Design = (props) => {
       fieldIndex++
     ) {
       console.log(layout.screens[0].fields[fieldIndex].name);
+      var dummy = new fabric.Rect({
+        left: layout.screens[0].fields[fieldIndex].x,
+        top: layout.screens[0].fields[fieldIndex].y,
+        fill: "#f1f1f1",
+
+        width: layout.screens[0].fields[fieldIndex].width,
+        height: layout.screens[0].fields[fieldIndex].height,
+        opacity: 1.0,
+
+        stroke: "white",
+        strokeWidth: 2,
+        selectable: true,
+      });
+
+      canv.add(dummy);
     }
-    var dummy = new fabric.Rect({
-      left: 10,
-      top: 10,
 
-      fill: "red",
-      width: 20,
-      height: 10,
-      opacity: 1.0,
-
-      stroke: "white",
-      strokeWidth: 1,
-      selectable: true,
-    });
-
-    canv.add(dummy);
     setInitialized(true);
   }
 
