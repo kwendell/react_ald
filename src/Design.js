@@ -8,6 +8,7 @@ import "./Ald.css";
 import { fabric } from "fabric";
 
 import Mnemonics from "./Mnemonics";
+import Search from "./Search";
 
 const useSingleton = (initializer) => {
   React.useState(initializer);
@@ -147,6 +148,7 @@ const Design = (props) => {
 
   return (
     <div style={designStyle}>
+      <Search />
       <Mnemonics />
       <div id="canvas-wrapper">
         <canvas
