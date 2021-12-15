@@ -8,25 +8,28 @@ const useSingleton = (initializer) => {
 
 const Search = (props) => {
   const [upcDescList, setUpcDescList] = useState([]);
+  const [initialized, setInitialized] = useState(false);
 
-  if (props.pricingScenario === undefined) {
-    console.log("undefined");
-  } else {
-    console.log(props.pricingScenario);
-  }
+  if (
+    props.pricingScenario !== undefined &&
+    props.pricingScenario &&
+    !initialized
+  ) {
+    setInitialized(true);
 
-  const url = `/altierre/asg/ws/apt/getUpcList?priceType=NORMAL`;
+    const url =
+      `/altierre/asg/ws/apt/getUpcList?priceType=` + props.pricingScenario;
 
-  const username = "username";
-  const password = "password";
-  const headers = new Headers();
-  headers.set(
-    "Authorization",
-    "Basic " + Buffer.from(username + ":" + password).toString("base64")
-  );
-  headers.set("mode", "cors");
+    const username = "username";
+    const password = "password";
+    const headers = new Headers();
+    headers.set(
+      "Authorization",
+      "Basic " + Buffer.from(username + ":" + password).toString("base64")
+    );
+    headers.set("mode", "cors");
 
-  useSingleton(() => {
+    // useSingleton(() => {
     const requestUpcDescAwait = async (id = 100) => {
       const response = await fetch(url, headers);
       const json = await response.json();
@@ -34,7 +37,8 @@ const Search = (props) => {
     };
 
     requestUpcDescAwait();
-  });
+    // });
+  }
 
   return (
     <div>
