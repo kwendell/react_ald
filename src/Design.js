@@ -17,7 +17,7 @@ const Design = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [layout, setLayout] = useState([]);
-  const [canvas, setCanvas] = useState(React.createRef());
+
   const [initialized, setInitialized] = useState(false);
 
   const history = useHistory();
@@ -65,7 +65,7 @@ const Design = () => {
 
     requestLayoutAwait();
   });
-  if (layout.id && width > 0 && height > 0 && canvas && !initialized) {
+  if (layout.id && width > 0 && height > 0 && !initialized) {
     var canv = new fabric.Canvas("screen", {
       height: height,
       width: width,
