@@ -13,7 +13,7 @@ import Search from "./Search";
 const useSingleton = (initializer) => {
   React.useState(initializer);
 };
-const Design = (props) => {
+const Design = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [layout, setLayout] = useState([]);
@@ -34,8 +34,8 @@ const Design = (props) => {
   const url =
     `/altierre/asg/ws/apt/getTagDimension?tagTypeStr=` +
     history.location.tagType.tagType;
-  const username = "asgadmin";
-  const password = "asgAdm1n!";
+  const username = "username";
+  const password = "password";
   const headers = new Headers();
   headers.set(
     "Authorization",
@@ -59,6 +59,7 @@ const Design = (props) => {
     const requestLayoutAwait = async (id = 101) => {
       const response = await fetch(layoutUrl, headers);
       const json = await response.json();
+
       setLayout(json);
     };
 
@@ -148,7 +149,6 @@ const Design = (props) => {
 
   return (
     <div style={designStyle}>
-      <Search />
       <Mnemonics />
       <div id="canvas-wrapper">
         <canvas
@@ -159,6 +159,7 @@ const Design = (props) => {
           height={height}
         ></canvas>
       </div>
+      <Search pricingScenario={layout.pricingScenario} />
     </div>
   );
 };

@@ -9,10 +9,16 @@ const useSingleton = (initializer) => {
 const Search = (props) => {
   const [upcDescList, setUpcDescList] = useState([]);
 
+  if (props.pricingScenario === undefined) {
+    console.log("undefined");
+  } else {
+    console.log(props.pricingScenario);
+  }
+
   const url = `/altierre/asg/ws/apt/getUpcList?priceType=NORMAL`;
 
-  const username = "asgadmin";
-  const password = "asgAdm1n!";
+  const username = "username";
+  const password = "password";
   const headers = new Headers();
   headers.set(
     "Authorization",

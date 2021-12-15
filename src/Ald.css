@@ -3,6 +3,10 @@ table {
   border-collapse: collapse;
 }
 
+.search-item {
+  font-family: "Courier New", Courier, monospace;
+}
+
 thead th {
   text-align: left;
   border-bottom: 2px solid black;

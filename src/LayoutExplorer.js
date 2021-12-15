@@ -10,8 +10,8 @@ const LayoutExplorer = () => {
   const [cleanup, setCleanup] = useState(false);
   const url =
     "/altierre/asg/ws/apt/getTableContents?SelectQueryString=pricing_scenario,wdt_type_id,layout_content,update_date,layout_identifier from layout";
-  const username = "asgadmin";
-  const password = "asgAdm1n!";
+  const username = "username";
+  const password = "password";
   const headers = new Headers();
   headers.set(
     "Authorization",
