@@ -2,10 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "./Ald.css";
 
-const useSingleton = (initializer) => {
-  React.useState(initializer);
-};
-
 const Search = (props) => {
   const [upcDescList, setUpcDescList] = useState([]);
   const [initialized, setInitialized] = useState(false);
