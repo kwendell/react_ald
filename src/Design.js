@@ -8,7 +8,6 @@ import "./Ald.css";
 import { fabric } from "fabric";
 
 import Mnemonics from "./Mnemonics";
-import Search from "./Search";
 
 const useSingleton = (initializer) => {
   React.useState(initializer);
@@ -97,6 +96,7 @@ const Design = () => {
       });
       var text = new fabric.Text(layout.screens[0].fields[fieldIndex].name, {
         fontSize: 11,
+        fontFamily: "sans-serif",
         // originX: "center",
         // originY: "center",
         lockScalingX: true,
@@ -132,34 +132,17 @@ const Design = () => {
     setInitialized(true);
   }
 
-  var canvasStyle = {
-    border: "4px solid white",
-    borderRadius: 4,
-  };
-
-  var designStyle = {
-    display: "inline-block",
-    padding: 20,
-    backgroundColor: "#f1f1f1",
-    position: "relative",
-    float: "left",
-    width: "100%",
-    height: "100%",
-  };
-
   return (
-    <div style={designStyle}>
-      <Mnemonics />
+    <div class="design">
+      <Mnemonics class="mnemonics" />
       <div id="canvas-wrapper">
         <canvas
           id="screen"
-          style={canvasStyle}
           ref={canvasRef}
           width={width}
           height={height}
         ></canvas>
       </div>
-      <Search pricingScenario={layout.pricingScenario} />
     </div>
   );
 };
