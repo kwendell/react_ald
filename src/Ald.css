@@ -35,10 +35,8 @@ table tbody tr:hover {
   height: 100%;
 }
 
-#canvas-wrapper {
+.canvas-wrapper {
   position: relative;
-  top: 30%;
-  left: 30%;
 }
 /*
 th,

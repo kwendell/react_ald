@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { useQuery } from "react-query";
 
+import { Buffer } from "buffer";
+
 const Mnemonics = () => {
   const [mnemonics, setMnemonics] = useState([]);
 
@@ -14,10 +16,12 @@ const Mnemonics = () => {
     backgroundColor: "#f1f1f1",
   };
   const width_proportion = "20%";
-  const float_value = "left";
+  const height_proportion = "50%";
+
   const tableStyle = {
     width: width_proportion,
-    float: float_value,
+    height: height_proportion,
+
     backgroundColor: "#f1f1f1",
   };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useState, useRef } from "react";
+import { Buffer } from "buffer";
 
 //import { fabric } from "fabric";
 import "./Ald.css";
@@ -133,9 +134,9 @@ const Design = () => {
   }
 
   return (
-    <div class="design">
-      <Mnemonics class="mnemonics" />
-      <div id="canvas-wrapper">
+    <div className="design">
+      <Mnemonics className="mnemonics" />
+      <div className="canvas-wrapper">
         <canvas
           id="screen"
           ref={canvasRef}
