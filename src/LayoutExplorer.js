@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Buffer } from "buffer";
 
 const LayoutExplorer = () => {
   const [layouts, setLayouts] = useState([]);
