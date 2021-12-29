@@ -10,6 +10,8 @@ import { fabric } from "fabric";
 
 import Mnemonics from "./Mnemonics";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const useSingleton = (initializer) => {
   React.useState(initializer);
 };
@@ -135,14 +137,20 @@ const Design = () => {
 
   return (
     <div className="design">
-      <Mnemonics className="mnemonics" />
-      <div className="canvas-wrapper">
-        <canvas
-          id="screen"
-          ref={canvasRef}
-          width={width}
-          height={height}
-        ></canvas>
+      <div className="row">
+        <div className="col-lg-3 col-md-4 col-sm-12">
+          <Mnemonics className="mnemonics" />
+        </div>
+        <div className="col-lg-9 col-md-8 col-sm-12">
+          <div>
+            <canvas
+              id="screen"
+              ref={canvasRef}
+              width={width}
+              height={height}
+            ></canvas>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ const Mnemonics = () => {
   if (isFetching) return "fetching";
 
   return (
-    <table style={tableStyle}>
+    <table>
       <tbody>
         {mnemonics.map((mnemonic, index) => (
           <tr key={index + "tr"}>
