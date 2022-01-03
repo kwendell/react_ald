@@ -6,6 +6,8 @@ import { useQuery } from "react-query";
 
 import { Buffer } from "buffer";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Mnemonics = () => {
   const [mnemonics, setMnemonics] = useState([]);
 
@@ -13,15 +15,6 @@ const Mnemonics = () => {
     fontSize: 14,
     fontFamily: "monospace",
     color: "#0080A8",
-    backgroundColor: "#f1f1f1",
-  };
-  const width_proportion = "20%";
-  const height_proportion = "50%";
-
-  const tableStyle = {
-    width: width_proportion,
-    height: height_proportion,
-
     backgroundColor: "#f1f1f1",
   };
 
@@ -48,22 +41,20 @@ const Mnemonics = () => {
   if (isFetching) return "fetching";
 
   return (
-    <table>
-      <tbody>
-        {mnemonics.map((mnemonic, index) => (
-          <tr key={index + "tr"}>
-            <td style={liStyle} key={index}>
-              {mnemonic}
-            </td>
-            <td key={index + "td"}>
-              <button key={index} id={mnemonic + "btn"} type="submit">
-                +
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div>
+      {mnemonics.map((mnemonic, index) => (
+        <div className="row" key={index + "tr"}>
+          <div style={liStyle} className="col-lg-9" key={index}>
+            {mnemonic}
+          </div>
+          <div className="col-lg-3" key={index + "td"}>
+            <button key={index} id={mnemonic + "btn"} type="submit">
+              +
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 

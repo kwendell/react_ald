@@ -141,15 +141,13 @@ const Design = () => {
         <div className="col-lg-3 col-md-4 col-sm-12">
           <Mnemonics className="mnemonics" />
         </div>
-        <div className="col-lg-9 col-md-8 col-sm-12">
-          <div>
-            <canvas
-              id="screen"
-              ref={canvasRef}
-              width={width}
-              height={height}
-            ></canvas>
-          </div>
+        <div className="col-lg-9 col-md-8 col-sm-12 col-centered">
+          <canvas
+            id="screen"
+            ref={canvasRef}
+            width={width}
+            height={height}
+          ></canvas>
         </div>
       </div>
     </div>
