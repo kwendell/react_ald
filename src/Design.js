@@ -91,7 +91,7 @@ const Design = () => {
 
         width: layout.screens[0].fields[fieldIndex].width,
         height: layout.screens[0].fields[fieldIndex].height,
-        opacity: 1.0,
+        opacity: 0.5,
 
         stroke: "white",
         strokeWidth: 2,
@@ -138,10 +138,10 @@ const Design = () => {
   return (
     <div className="design">
       <div className="row">
-        <div className="col-lg-3 col-md-4 col-sm-12">
+        <div className="col-lg-2 col-md-4 col-sm-12">
           <Mnemonics className="mnemonics" />
         </div>
-        <div className="col-lg-9 col-md-8 col-sm-12 col-centered">
+        <div className="col-lg-10 col-md-8 col-sm-12 col-centered">
           <canvas
             id="screen"
             ref={canvasRef}
