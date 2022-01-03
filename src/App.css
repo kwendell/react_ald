@@ -1,16 +1,7 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Itim&family=Nanum+Pen+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-
 .App {
   text-align: left;
- font-family: 'Reenie Beanie', cursive;
+  font-family: sans-serif;
   font-weight: bold;
-
-
 }
 
 ul {
@@ -26,47 +17,27 @@ ul li {
 }
 
 ul li:last-child {
-  border-bottom: none
+  border-bottom: none;
 }
-
-
-
-canvas-wrapper {
-  position: absolute;
-  top: 50px;
-  left: 100px;
-}
-
-
-
-
 
 h1 {
-margin: auto
-}
-
-.canvas {
-
-height:20%;
+  margin: auto;
 }
 
 .hidden {
-display:none;
+  display: none;
 }
-
 
 .sticky {
   float: left;
   width: 200px;
   padding: 12px;
-
 }
 
 .column-fillremainder {
   float: left;
   width: 100%;
   padding: 10px;
-
 }
 
 /* Clear floats after the columns */
@@ -78,16 +49,7 @@ display:none;
 }
 */
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -96,17 +58,10 @@ display:none;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-canvas.dotted {border-style: dotted}
+canvas.dotted {
+  border-style: dotted;
+}
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

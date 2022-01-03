@@ -18,8 +18,8 @@ const Mnemonics = () => {
     backgroundColor: "#f1f1f1",
   };
 
-  const username = "asgadmin";
-  const password = "asgAdm1n!";
+  const username = "username";
+  const password = "password";
   const headers = new Headers();
   headers.set(
     "Authorization",
@@ -41,14 +41,14 @@ const Mnemonics = () => {
   if (isFetching) return "fetching";
 
   return (
-    <div>
+    <div className="mnemonics">
       {mnemonics.map((mnemonic, index) => (
         <div className="row" key={index + "tr"}>
           <div style={liStyle} className="col-lg-9" key={index}>
             {mnemonic}
           </div>
           <div className="col-lg-3" key={index + "td"}>
-            <button key={index} id={mnemonic + "btn"} type="submit">
+            <button key={index + "btn"} type="submit">
               +
             </button>
           </div>

@@ -9,7 +9,7 @@ table {
 
 thead th {
   text-align: left;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 
 thead button {
@@ -27,12 +27,20 @@ table tbody tr:hover {
 }
 
 .design {
-  background-color: #f1f1f1;
+  background-color: white;
   height: 100%;
 }
 
 .col-centered {
   float: none;
   margin: 0 auto;
-  background-color: #ebeccd;
+  /*background-color: #ebeccd;*/
+}
+
+#screen {
+  background-color: #f1f1f1;
+}
+
+.mnemonics {
+  background-color: #f1f1f1;
 }
