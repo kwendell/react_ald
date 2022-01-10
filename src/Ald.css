@@ -31,12 +31,6 @@ table tbody tr:hover {
   height: 100%;
 }
 
-.col-centered {
-  float: none;
-  margin: 0 auto;
-  /*background-color: #ebeccd;*/
-}
-
 #screen {
   background-color: #f1f1f1;
 }

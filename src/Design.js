@@ -141,7 +141,7 @@ const Design = () => {
         <div className="col-lg-2 col-md-4 col-sm-12">
           <Mnemonics className="mnemonics" />
         </div>
-        <div className="col-lg-10 col-md-8 col-sm-12 col-centered">
+        <div className="col-lg-10 col-md-8 col-sm-12">
           <canvas
             id="screen"
             ref={canvasRef}

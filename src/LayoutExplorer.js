@@ -36,7 +36,7 @@ const LayoutExplorer = () => {
     }
 
     return function cleanup() {
-      //console.log("calling clean up");
+      console.log("calling clean up");
       setCleanup(true);
     };
   });
